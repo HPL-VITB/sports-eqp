@@ -67,10 +67,30 @@ export function assertSameOrigin(ctx: AppContext, req: Request): void {
   const origin = req.headers.get("origin");
   if (origin !== null) {
     if (origin === ctx.config.APP_ORIGIN) return;
+    // Also accept the address the request was actually sent to (e.g. the *.vercel.app URL or a second
+    // domain), so a stale APP_ORIGIN does not lock everyone out. A different website still never matches,
+    // because the browser sets Origin to that website.
+    if (requestOrigins(req).includes(origin)) return;
   } else if (req.headers.get("sec-fetch-site") === "same-origin") {
     return;
   }
   throw new AppError(403, "BAD_ORIGIN", "Request blocked: it did not come from this site.");
+}
+
+/** The origin(s) this request was addressed to: from the URL, and from Vercel's forwarded host headers. */
+function requestOrigins(req: Request): string[] {
+  const out: string[] = [];
+  try {
+    out.push(new URL(req.url).origin);
+  } catch {
+    /* ignore */
+  }
+  const host = req.headers.get("x-forwarded-host")?.split(",")[0]?.trim() || req.headers.get("host");
+  if (host) {
+    const proto = req.headers.get("x-forwarded-proto")?.split(",")[0]?.trim() || "https";
+    out.push(`${proto}://${host}`);
+  }
+  return out;
 }
 
 export async function readJson(req: Request): Promise<unknown> {
