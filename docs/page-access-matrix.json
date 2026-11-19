@@ -1,0 +1,217 @@
+{
+ "/dashboard": {
+  "FR_SPORTS": "ok",
+  "ASO": "ok",
+  "STOREKEEPER": "ok",
+  "PROCUREMENT": "ok",
+  "MANAGEMENT": "ok",
+  "RECIPIENT": "→ /forbidden"
+ },
+ "/inventory": {
+  "FR_SPORTS": "ok",
+  "ASO": "ok",
+  "STOREKEEPER": "ok",
+  "PROCUREMENT": "ok",
+  "MANAGEMENT": "ok",
+  "RECIPIENT": "→ /forbidden"
+ },
+ "/inventory/new": {
+  "FR_SPORTS": "ok",
+  "ASO": "ok",
+  "STOREKEEPER": "→ /forbidden",
+  "PROCUREMENT": "→ /forbidden",
+  "MANAGEMENT": "→ /forbidden",
+  "RECIPIENT": "→ /forbidden"
+ },
+ "/inventory/[id]": {
+  "FR_SPORTS": "ok",
+  "ASO": "ok",
+  "STOREKEEPER": "ok",
+  "PROCUREMENT": "ok",
+  "MANAGEMENT": "ok",
+  "RECIPIENT": "→ /forbidden"
+ },
+ "/inventory/import": {
+  "FR_SPORTS": "ok",
+  "ASO": "ok",
+  "STOREKEEPER": "→ /forbidden",
+  "PROCUREMENT": "ok",
+  "MANAGEMENT": "→ /forbidden",
+  "RECIPIENT": "→ /forbidden"
+ },
+ "/browse": {
+  "FR_SPORTS": "ok",
+  "ASO": "ok",
+  "STOREKEEPER": "ok",
+  "PROCUREMENT": "ok",
+  "MANAGEMENT": "→ /forbidden",
+  "RECIPIENT": "ok"
+ },
+ "/my": {
+  "FR_SPORTS": "ok",
+  "ASO": "ok",
+  "STOREKEEPER": "ok",
+  "PROCUREMENT": "ok",
+  "MANAGEMENT": "→ /forbidden",
+  "RECIPIENT": "ok"
+ },
+ "/requests": {
+  "FR_SPORTS": "ok",
+  "ASO": "ok",
+  "STOREKEEPER": "ok",
+  "PROCUREMENT": "→ /forbidden",
+  "MANAGEMENT": "→ /forbidden",
+  "RECIPIENT": "→ /forbidden"
+ },
+ "/requests/[id]": {
+  "FR_SPORTS": "ok",
+  "ASO": "ok",
+  "STOREKEEPER": "ok",
+  "PROCUREMENT": "→ /forbidden",
+  "MANAGEMENT": "→ /forbidden",
+  "RECIPIENT": "→ /forbidden"
+ },
+ "/returns": {
+  "FR_SPORTS": "ok",
+  "ASO": "ok",
+  "STOREKEEPER": "ok",
+  "PROCUREMENT": "→ /forbidden",
+  "MANAGEMENT": "→ /forbidden",
+  "RECIPIENT": "→ /forbidden"
+ },
+ "/returns/[id]": {
+  "FR_SPORTS": "ok",
+  "ASO": "ok",
+  "STOREKEEPER": "ok",
+  "PROCUREMENT": "→ /forbidden",
+  "MANAGEMENT": "→ /forbidden",
+  "RECIPIENT": "→ /forbidden"
+ },
+ "/adjustments": {
+  "FR_SPORTS": "ok",
+  "ASO": "ok",
+  "STOREKEEPER": "ok",
+  "PROCUREMENT": "→ /forbidden",
+  "MANAGEMENT": "→ /forbidden",
+  "RECIPIENT": "→ /forbidden"
+ },
+ "/adjustments/discards": {
+  "FR_SPORTS": "ok",
+  "ASO": "ok",
+  "STOREKEEPER": "ok",
+  "PROCUREMENT": "→ /forbidden",
+  "MANAGEMENT": "→ /forbidden",
+  "RECIPIENT": "→ /forbidden"
+ },
+ "/adjustments/corrections": {
+  "FR_SPORTS": "ok",
+  "ASO": "ok",
+  "STOREKEEPER": "ok",
+  "PROCUREMENT": "→ /forbidden",
+  "MANAGEMENT": "→ /forbidden",
+  "RECIPIENT": "→ /forbidden"
+ },
+ "/adjustments/counts": {
+  "FR_SPORTS": "ok",
+  "ASO": "ok",
+  "STOREKEEPER": "ok",
+  "PROCUREMENT": "→ /forbidden",
+  "MANAGEMENT": "→ /forbidden",
+  "RECIPIENT": "→ /forbidden"
+ },
+ "/adjustments/counts/[id]": {
+  "FR_SPORTS": "ok",
+  "ASO": "ok",
+  "STOREKEEPER": "ok",
+  "PROCUREMENT": "→ /forbidden",
+  "MANAGEMENT": "→ /forbidden",
+  "RECIPIENT": "→ /forbidden"
+ },
+ "/reports": {
+  "FR_SPORTS": "ok",
+  "ASO": "ok",
+  "STOREKEEPER": "ok",
+  "PROCUREMENT": "ok",
+  "MANAGEMENT": "ok",
+  "RECIPIENT": "→ /forbidden"
+ },
+ "/reports/issues": {
+  "FR_SPORTS": "ok",
+  "ASO": "ok",
+  "STOREKEEPER": "ok",
+  "PROCUREMENT": "→ /forbidden",
+  "MANAGEMENT": "ok",
+  "RECIPIENT": "→ /forbidden"
+ },
+ "/reports/stock": {
+  "FR_SPORTS": "ok",
+  "ASO": "ok",
+  "STOREKEEPER": "ok",
+  "PROCUREMENT": "ok",
+  "MANAGEMENT": "ok",
+  "RECIPIENT": "→ /forbidden"
+ },
+ "/reports/discards": {
+  "FR_SPORTS": "ok",
+  "ASO": "ok",
+  "STOREKEEPER": "→ /forbidden",
+  "PROCUREMENT": "→ /forbidden",
+  "MANAGEMENT": "ok",
+  "RECIPIENT": "→ /forbidden"
+ },
+ "/reports/receipts": {
+  "FR_SPORTS": "ok",
+  "ASO": "ok",
+  "STOREKEEPER": "→ /forbidden",
+  "PROCUREMENT": "ok",
+  "MANAGEMENT": "ok",
+  "RECIPIENT": "→ /forbidden"
+ },
+ "/admin/users": {
+  "FR_SPORTS": "ok",
+  "ASO": "→ /forbidden",
+  "STOREKEEPER": "→ /forbidden",
+  "PROCUREMENT": "→ /forbidden",
+  "MANAGEMENT": "→ /forbidden",
+  "RECIPIENT": "→ /forbidden"
+ },
+ "/admin/master": {
+  "FR_SPORTS": "ok",
+  "ASO": "→ /forbidden",
+  "STOREKEEPER": "→ /forbidden",
+  "PROCUREMENT": "→ /forbidden",
+  "MANAGEMENT": "→ /forbidden",
+  "RECIPIENT": "→ /forbidden"
+ },
+ "/admin/emails": {
+  "FR_SPORTS": "ok",
+  "ASO": "→ /forbidden",
+  "STOREKEEPER": "→ /forbidden",
+  "PROCUREMENT": "→ /forbidden",
+  "MANAGEMENT": "→ /forbidden",
+  "RECIPIENT": "→ /forbidden"
+ },
+ "/admin/audit": {
+  "FR_SPORTS": "ok",
+  "ASO": "→ /forbidden",
+  "STOREKEEPER": "→ /forbidden",
+  "PROCUREMENT": "→ /forbidden",
+  "MANAGEMENT": "ok",
+  "RECIPIENT": "→ /forbidden"
+ },
+ "/login": {
+  "signedOut": "ok"
+ },
+ "/home-signed-out": {
+  "signedOut": "→ /login"
+ },
+ "/forbidden": {
+  "signedOut": "ok"
+ },
+ "/ (recipient)": {
+  "RECIPIENT": "→ /my"
+ },
+ "/ (FR Sports)": {
+  "FR_SPORTS": "→ /dashboard"
+ }
+}

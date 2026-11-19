@@ -1,0 +1,21 @@
+name: Email retry
+
+# Sends any queued or retrying emails every 15 minutes (Vercel Hobby cron can only run daily).
+# Repository secrets needed: APP_URL (e.g. https://sports-eqp-issue.hplvitbhopal.site) and CRON_SECRET (same value as in Vercel).
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Send queued emails
+        env:
+          APP_URL: ${{ secrets.APP_URL }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+        run: |
+          if [ -z "$APP_URL" ] || [ -z "$CRON_SECRET" ]; then echo "APP_URL / CRON_SECRET not configured; skipping."; exit 0; fi
+          curl --fail --silent --show-error --max-time 120 -H "Authorization: Bearer $CRON_SECRET" "$APP_URL/api/cron/dispatch"

@@ -1,0 +1,17 @@
+{
+  "//": "Type-checks the framework-independent core (no Next.js, pg or nodemailer needed). Used where only Node + zod are installed.",
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "plugins": [],
+    "incremental": false,
+    "types": ["node"]
+  },
+  "include": ["src/server/**/*.ts", "tests/**/*.ts"],
+  "exclude": [
+    "node_modules",
+    "src/server/runtime.ts",
+    "src/server/next-session.ts",
+    "src/server/db/pg.ts",
+    "src/server/email/smtp.ts"
+  ]
+}

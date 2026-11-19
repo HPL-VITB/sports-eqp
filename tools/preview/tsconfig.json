@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", "lib": ["dom", "dom.iterable", "ES2023"], "strict": true, "noUncheckedIndexedAccess": true,
+    "noEmit": true, "skipLibCheck": true, "esModuleInterop": true, "module": "esnext", "moduleResolution": "bundler",
+    "isolatedModules": true, "allowImportingTsExtensions": true, "resolveJsonModule": true,
+    "jsx": "react-jsx", "jsxImportSource": "react", "types": ["node"],
+    "baseUrl": "../..", "ignoreDeprecations": "6.0",
+    "paths": {
+      "react": ["tools/preview/stubs/react.ts"],
+      "react/jsx-runtime": ["tools/preview/stubs/jsx-runtime.ts"],
+      "react/jsx-dev-runtime": ["tools/preview/stubs/jsx-runtime.ts"],
+      "next": ["tools/preview/stubs/next.ts"],
+      "next/link": ["tools/preview/stubs/next-link.ts"],
+      "next/navigation": ["tools/preview/stubs/next-navigation.ts"],
+      "next/headers": ["tools/preview/stubs/next-headers.ts"],
+      "server-only": ["tools/preview/stubs/server-only.ts"],
+      "@/server/runtime": ["tools/preview/stubs/runtime.ts"],
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["stubs/*.ts", "stubs/*.d.ts", "../../src/app/**/*.tsx", "../../src/app/**/*.ts", "../../src/lib/**/*.ts", "../../src/components/**/*.tsx", "render.tsx", "preview.ts"],
+  "exclude": ["../../src/app/api/**", "../../src/server/db/pg.ts", "../../src/server/email/smtp.ts", "../../src/server/runtime.ts"]
+}

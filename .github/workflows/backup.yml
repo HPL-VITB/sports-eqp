@@ -1,0 +1,53 @@
+name: Database backup
+
+# Nightly encrypted backup of the production database, kept as a private workflow artifact for 30 days.
+# OFF until both repository secrets exist:
+#   BACKUP_DATABASE_URL  Neon DIRECT (non-pooled) connection string, ideally for a read-only role
+#   BACKUP_PASSPHRASE    long random passphrase; store a copy offline with FR Sports / IT. Without it a backup cannot be opened.
+# The dump contains personal data (names, registration numbers, emails). Keep the repository private and limit who
+# has access to it. If the university prefers its own storage, replace the upload step.
+on:
+  schedule:
+    - cron: "30 20 * * *" # 02:00 IST
+  workflow_dispatch:
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check configuration
+        id: cfg
+        env:
+          URL: ${{ secrets.BACKUP_DATABASE_URL }}
+          PASS: ${{ secrets.BACKUP_PASSPHRASE }}
+        run: |
+          if [ -z "$URL" ] || [ -z "$PASS" ]; then echo "Backup secrets not set; skipping."; echo "run=no" >> "$GITHUB_OUTPUT"; else echo "run=yes" >> "$GITHUB_OUTPUT"; fi
+      - name: Install PostgreSQL 17 client
+        if: steps.cfg.outputs.run == 'yes'
+        run: |
+          sudo install -d /usr/share/postgresql-common/pgdg
+          sudo curl -fsSo /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc https://www.postgresql.org/media/keys/ACCC4CF8.asc
+          echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
+          sudo apt-get update -qq && sudo apt-get install -y -qq postgresql-client-17
+      - name: Dump and encrypt
+        if: steps.cfg.outputs.run == 'yes'
+        env:
+          URL: ${{ secrets.BACKUP_DATABASE_URL }}
+          PASS: ${{ secrets.BACKUP_PASSPHRASE }}
+        run: |
+          set -o pipefail
+          f="sports-eqp-$(date -u +%Y%m%d-%H%M).dump.gpg"
+          /usr/lib/postgresql/17/bin/pg_dump --format=custom --no-owner --no-privileges "$URL" \
+            | gpg --batch --yes --symmetric --cipher-algo AES256 --passphrase-fd 3 3<<<"$PASS" -o "$f"
+          test -s "$f"
+          echo "FILE=$f" >> "$GITHUB_ENV"
+          ls -l "$f"
+      - name: Keep for 30 days
+        if: steps.cfg.outputs.run == 'yes'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.FILE }}
+          path: ${{ env.FILE }}
+          retention-days: 30
+          if-no-files-found: error

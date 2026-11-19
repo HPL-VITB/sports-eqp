@@ -1,0 +1,825 @@
+TAP version 13
+# Subtest: profile: completed once; registration number then locked; duplicates refused
+ok 1 - profile: completed once; registration number then locked; duplicates refused
+  ---
+  duration_ms: 214.468166
+  type: 'test'
+  ...
+# Subtest: only FR Sports can list or change users
+ok 2 - only FR Sports can list or change users
+  ---
+  duration_ms: 14.547036
+  type: 'test'
+  ...
+# Subtest: FR Sports grants a role; change is audited and applies on the next request
+ok 3 - FR Sports grants a role; change is audited and applies on the next request
+  ---
+  duration_ms: 12.980474
+  type: 'test'
+  ...
+# Subtest: deactivation signs the user out everywhere
+ok 4 - deactivation signs the user out everywhere
+  ---
+  duration_ms: 15.510422
+  type: 'test'
+  ...
+# Subtest: FR Sports cannot change own role or deactivate self
+ok 5 - FR Sports cannot change own role or deactivate self
+  ---
+  duration_ms: 2.634463
+  type: 'test'
+  ...
+# Subtest: the last active FR Sports user can never be removed, even by simultaneous demotions
+ok 6 - the last active FR Sports user can never be removed, even by simultaneous demotions
+  ---
+  duration_ms: 76.655501
+  type: 'test'
+  ...
+# Subtest: listing searches by name, email or registration number
+ok 7 - listing searches by name, email or registration number
+  ---
+  duration_ms: 7.113195
+  type: 'test'
+  ...
+# Subtest: bootstrap admin script creates or promotes an FR Sports user
+ok 8 - bootstrap admin script creates or promotes an FR Sports user
+  ---
+  duration_ms: 4.024274
+  type: 'test'
+  ...
+# Subtest: discard from the store: ASO requests, units are held (cannot be issued), FR Sports approves, total drops
+ok 9 - discard from the store: ASO requests, units are held (cannot be issued), FR Sports approves, total drops
+  ---
+  duration_ms: 253.083246
+  type: 'test'
+  ...
+# Subtest: issued equipment can never be discarded; held units cannot be requested twice
+ok 10 - issued equipment can never be discarded; held units cannot be requested twice
+  ---
+  duration_ms: 28.621876
+  type: 'test'
+  ...
+# Subtest: rejection needs a reason and releases the held units; only FR Sports decides; management and procurement cannot request
+ok 11 - rejection needs a reason and releases the held units; only FR Sports decides; management and procurement cannot request
+  ---
+  duration_ms: 4.948422
+  type: 'test'
+  ...
+# Subtest: discarding damaged units from a return closes the damage record; held units cannot be marked usable meanwhile
+ok 12 - discarding damaged units from a return closes the damage record; held units cannot be marked usable meanwhile
+  ---
+  duration_ms: 50.140832
+  type: 'test'
+  ...
+# Subtest: used-up consumables raise a discard automatically; FR Sports approval closes it (even if FR recorded the return)
+ok 13 - used-up consumables raise a discard automatically; FR Sports approval closes it (even if FR recorded the return)
+  ---
+  duration_ms: 40.667081
+  type: 'test'
+  ...
+# Subtest: self-approval is refused even for a second FR user's own request
+ok 14 - self-approval is refused even for a second FR user's own request
+  ---
+  duration_ms: 6.761366
+  type: 'test'
+  ...
+# Subtest: corrections are applied as differences: a correction approved after an issue still gives the right balance
+ok 15 - corrections are applied as differences: a correction approved after an issue still gives the right balance
+  ---
+  duration_ms: 17.162569
+  type: 'test'
+  ...
+# Subtest: a correction that would make stock negative is refused at approval with nothing changed
+ok 16 - a correction that would make stock negative is refused at approval with nothing changed
+  ---
+  duration_ms: 17.683869
+  type: 'test'
+  ...
+# Subtest: one pending correction per item and state; requester may cancel
+ok 17 - one pending correction per item and state; requester may cancel
+  ---
+  duration_ms: 6.171906
+  type: 'test'
+  ...
+# Subtest: damaged corrections keep damage records in step (extra damaged opens a record; fewer closes the oldest)
+ok 18 - damaged corrections keep damage records in step (extra damaged opens a record; fewer closes the oldest)
+  ---
+  duration_ms: 16.878421
+  type: 'test'
+  ...
+# Subtest: blueprint count: 50 accountable with 20 issued -> 30 expected on the shelf; counting 30 is not a shortage
+ok 19 - blueprint count: 50 accountable with 20 issued -> 30 expected on the shelf; counting 30 is not a shortage
+  ---
+  duration_ms: 38.788571
+  type: 'test'
+  ...
+# Subtest: count with differences creates corrections for FR Sports, linked to the count report
+ok 20 - count with differences creates corrections for FR Sports, linked to the count report
+  ---
+  duration_ms: 12.993282
+  type: 'test'
+  ...
+# Subtest: reversal of a mistaken receipt: FR Sports only, once, with the original kept in history
+ok 21 - reversal of a mistaken receipt: FR Sports only, once, with the original kept in history
+  ---
+  duration_ms: 16.361524
+  type: 'test'
+  ...
+# Subtest: simultaneous approvals of the same discard: exactly one movement
+ok 22 - simultaneous approvals of the same discard: exactly one movement
+  ---
+  duration_ms: 7.251201
+  type: 'test'
+  ...
+# Subtest: simultaneous approvals of the same correction: applied once
+ok 23 - simultaneous approvals of the same correction: applied once
+  ---
+  duration_ms: 7.774757
+  type: 'test'
+  ...
+# Subtest: HTTP: ASO cannot approve a discard (403); FR Sports can
+ok 24 - HTTP: ASO cannot approve a discard (403); FR Sports can
+  ---
+  duration_ms: 27.693485
+  type: 'test'
+  ...
+# Subtest: books balance after every kind of adjustment
+ok 25 - books balance after every kind of adjustment
+  ---
+  duration_ms: 2.258621
+  type: 'test'
+  ...
+# Subtest: only vitbhopal.ac.in addresses can request a code
+ok 26 - only vitbhopal.ac.in addresses can request a code
+  ---
+  duration_ms: 161.355569
+  type: 'test'
+  ...
+# Subtest: full sign-in: code emailed, verified, recipient account created, session works
+ok 27 - full sign-in: code emailed, verified, recipient account created, session works
+  ---
+  duration_ms: 14.348581
+  type: 'test'
+  ...
+# Subtest: a code works once only
+ok 28 - a code works once only
+  ---
+  duration_ms: 8.669244
+  type: 'test'
+  ...
+# Subtest: five wrong attempts lock the code, even the correct one afterwards
+ok 29 - five wrong attempts lock the code, even the correct one afterwards
+  ---
+  duration_ms: 15.20619
+  type: 'test'
+  ...
+# Subtest: codes expire after 10 minutes
+ok 30 - codes expire after 10 minutes
+  ---
+  duration_ms: 6.449072
+  type: 'test'
+  ...
+# Subtest: resend cooldown of 60 s; a new code replaces the old one
+ok 31 - resend cooldown of 60 s; a new code replaces the old one
+  ---
+  duration_ms: 15.334923
+  type: 'test'
+  ...
+# Subtest: at most 5 codes per email per hour
+ok 32 - at most 5 codes per email per hour
+  ---
+  duration_ms: 12.848932
+  type: 'test'
+  ...
+# Subtest: simultaneous code requests for one email send exactly one code
+ok 33 - simultaneous code requests for one email send exactly one code
+  ---
+  duration_ms: 26.482943
+  type: 'test'
+  ...
+# OTP email failed Error: SMTP refused (simulated)
+#     at MemoryMailer.send (/home/claude/sports-eqp-issue/tests/support/harness.ts:37:13)
+#     at requestOtp (/home/claude/sports-eqp-issue/src/server/auth/otp.ts:79:22)
+#     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+#     at async waitForActual (node:assert:644:5)
+#     at async Function.rejects (node:assert:767:25)
+#     at async rejectsWith (/home/claude/sports-eqp-issue/tests/auth.test.ts:18:3)
+#     at async TestContext.<anonymous> (/home/claude/sports-eqp-issue/tests/auth.test.ts:117:3)
+#     at async Test.run (node:internal/test_runner/test:1054:7)
+#     at async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+# Subtest: email failure returns a clear error and does not start the cooldown
+ok 34 - email failure returns a clear error and does not start the cooldown
+  ---
+  duration_ms: 16.435029
+  type: 'test'
+  ...
+# Subtest: submitting the correct code twice at the same moment creates one session
+ok 35 - submitting the correct code twice at the same moment creates one session
+  ---
+  duration_ms: 10.725629
+  type: 'test'
+  ...
+# Subtest: deactivated accounts cannot sign in
+ok 36 - deactivated accounts cannot sign in
+  ---
+  duration_ms: 9.734647
+  type: 'test'
+  ...
+# Subtest: idle timeouts: staff 12 hours, recipients 7 days; logout revokes
+ok 37 - idle timeouts: staff 12 hours, recipients 7 days; logout revokes
+  ---
+  duration_ms: 9.519019
+  type: 'test'
+  ...
+# Subtest: sessions end after 30 days even when used daily
+ok 38 - sessions end after 30 days even when used daily
+  ---
+  duration_ms: 29.228553
+  type: 'test'
+  ...
+# Subtest: housekeeping removes expired sessions and old rate-limit windows
+ok 39 - housekeeping removes expired sessions and old rate-limit windows
+  ---
+  duration_ms: 1.980574
+  type: 'test'
+  ...
+# Subtest: the build's expected schema version is the newest migration file
+ok 40 - the build's expected schema version is the newest migration file
+  ---
+  duration_ms: 150.761194
+  type: 'test'
+  ...
+# Subtest: health: ok when the schema is current, 503 when the database is behind, nothing else revealed
+ok 41 - health: ok when the schema is current, 503 when the database is behind, nothing else revealed
+  ---
+  duration_ms: 24.277657
+  type: 'test'
+  ...
+# Subtest: production configuration refuses weak or example secrets and missing job secret
+ok 42 - production configuration refuses weak or example secrets and missing job secret
+  ---
+  duration_ms: 1.582312
+  type: 'test'
+  ...
+# Subtest: scheduled-job secret: exact match only (wrong, shorter, longer, missing all refused)
+ok 43 - scheduled-job secret: exact match only (wrong, shorter, longer, missing all refused)
+  ---
+  duration_ms: 0.815841
+  type: 'test'
+  ...
+# Subtest: sign-in over HTTP sets a secure, HttpOnly, SameSite cookie and /api/me works
+ok 44 - sign-in over HTTP sets a secure, HttpOnly, SameSite cookie and /api/me works
+  ---
+  duration_ms: 203.284935
+  type: 'test'
+  ...
+# Subtest: cross-site requests are refused (CSRF)
+ok 45 - cross-site requests are refused (CSRF)
+  ---
+  duration_ms: 5.200977
+  type: 'test'
+  ...
+# Subtest: every non-FR role gets 403 from user administration when calling the API directly
+ok 46 - every non-FR role gets 403 from user administration when calling the API directly
+  ---
+  duration_ms: 40.887435
+  type: 'test'
+  ...
+# Subtest: audit log: FR Sports and management can read it, others cannot
+ok 47 - audit log: FR Sports and management can read it, others cannot
+  ---
+  duration_ms: 9.013002
+  type: 'test'
+  ...
+# Subtest: no cookie -> 401; malformed input -> 400 with a readable message
+ok 48 - no cookie -> 401; malformed input -> 400 with a readable message
+  ---
+  duration_ms: 2.066218
+  type: 'test'
+  ...
+# Subtest: rate-limited responses carry Retry-After
+ok 49 - rate-limited responses carry Retry-After
+  ---
+  duration_ms: 5.378059
+  type: 'test'
+  ...
+# Subtest: cron endpoint requires the shared secret
+ok 50 - cron endpoint requires the shared secret
+  ---
+  duration_ms: 3.683986
+  type: 'test'
+  ...
+# Subtest: template: three sheets, the expected header row, readable back
+ok 51 - template: three sheets, the expected header row, readable back
+  ---
+  duration_ms: 254.442929
+  type: 'test'
+  ...
+# Subtest: template opens in LibreOffice (real spreadsheet software)
+ok 52 - template opens in LibreOffice (real spreadsheet software)
+  ---
+  duration_ms: 486.126297
+  type: 'test'
+  ...
+# Subtest: reads .xlsx files saved by openpyxl (shared strings, numeric cells, gaps)
+ok 53 - reads .xlsx files saved by openpyxl (shared strings, numeric cells, gaps)
+  ---
+  duration_ms: 148.649082
+  type: 'test'
+  ...
+# Subtest: reads .xlsx files converted by LibreOffice from CSV
+ok 54 - reads .xlsx files converted by LibreOffice from CSV
+  ---
+  duration_ms: 230.259655
+  type: 'test'
+  ...
+# Subtest: CSV reader: quotes, commas, semicolons, BOM, CRLF
+ok 55 - CSV reader: quotes, commas, semicolons, BOM, CRLF
+  ---
+  duration_ms: 0.608304
+  type: 'test'
+  ...
+# Subtest: unreadable, old-format and incomplete files give clear messages
+ok 56 - unreadable, old-format and incomplete files give clear messages
+  ---
+  duration_ms: 1.509165
+  type: 'test'
+  ...
+# Subtest: preview shows what each row will do and changes nothing
+ok 57 - preview shows what each row will do and changes nothing
+  ---
+  duration_ms: 28.474522
+  type: 'test'
+  ...
+# Subtest: clean import commits everything in one go; repeated or simultaneous confirmation imports once
+ok 58 - clean import commits everything in one go; repeated or simultaneous confirmation imports once
+  ---
+  duration_ms: 47.778936
+  type: 'test'
+  ...
+# Subtest: if records change after the preview, confirmation is refused and nothing is imported
+ok 59 - if records change after the preview, confirmation is refused and nothing is imported
+  ---
+  duration_ms: 18.67808
+  type: 'test'
+  ...
+# Subtest: previews expire after 30 minutes and belong to the person who uploaded them
+ok 60 - previews expire after 30 minutes and belong to the person who uploaded them
+  ---
+  duration_ms: 5.609199
+  type: 'test'
+  ...
+# Subtest: role limits: procurement may only add stock; storekeepers cannot import; ASO cannot create categories
+ok 61 - role limits: procurement may only add stock; storekeepers cannot import; ASO cannot create categories
+  ---
+  duration_ms: 18.418705
+  type: 'test'
+  ...
+# Subtest: HTTP: template download and multipart upload; storekeeper refused
+ok 62 - HTTP: template download and multipart upload; storekeeper refused
+  ---
+  duration_ms: 47.498546
+  type: 'test'
+  ...
+# Subtest: seed data: one store location and 11 sports
+ok 63 - seed data: one store location and 11 sports
+  ---
+  duration_ms: 220.383519
+  type: 'test'
+  ...
+# Subtest: only FR Sports manages sports, categories and locations; codes are derived and unique
+ok 64 - only FR Sports manages sports, categories and locations; codes are derived and unique
+  ---
+  duration_ms: 14.324958
+  type: 'test'
+  ...
+# Subtest: new equipment gets SPORT-CATEGORY-NNNN codes and an OPENING movement (40 in stock)
+ok 65 - new equipment gets SPORT-CATEGORY-NNNN codes and an OPENING movement (40 in stock)
+  ---
+  duration_ms: 22.334712
+  type: 'test'
+  ...
+# Subtest: blueprint receipt example: 40 + 20 = 60, with before/after, actor and remarks recorded
+ok 66 - blueprint receipt example: 40 + 20 = 60, with before/after, actor and remarks recorded
+  ---
+  duration_ms: 15.301826
+  type: 'test'
+  ...
+# Subtest: receipt validation and permissions
+ok 67 - receipt validation and permissions
+  ---
+  duration_ms: 10.692255
+  type: 'test'
+  ...
+# Subtest: creation rules: permissions, duplicates (any letter case), category must belong to sport
+ok 68 - creation rules: permissions, duplicates (any letter case), category must belong to sport
+  ---
+  duration_ms: 8.452922
+  type: 'test'
+  ...
+# Subtest: double-submitting a receipt with the same request key adds stock once (sequential and simultaneous)
+ok 69 - double-submitting a receipt with the same request key adds stock once (sequential and simultaneous)
+  ---
+  duration_ms: 19.767284
+  type: 'test'
+  ...
+# Subtest: 25 simultaneous receipts: every unit counted, ledger chain unbroken (opening + delta = closing)
+ok 70 - 25 simultaneous receipts: every unit counted, ledger chain unbroken (opening + delta = closing)
+  ---
+  duration_ms: 110.068738
+  type: 'test'
+  ...
+# Subtest: simultaneous creation: distinct items get consecutive unique codes; identical items are created once
+ok 71 - simultaneous creation: distinct items get consecutive unique codes; identical items are created once
+  ---
+  duration_ms: 79.769262
+  type: 'test'
+  ...
+# Subtest: the database itself refuses negative stock and edits to history
+ok 72 - the database itself refuses negative stock and edits to history
+  ---
+  duration_ms: 13.666976
+  type: 'test'
+  ...
+# Subtest: editing: descriptive fields audited; code, sport, category fixed; cannot deactivate with stock
+ok 73 - editing: descriptive fields audited; code, sport, category fixed; cannot deactivate with stock
+  ---
+  duration_ms: 25.330175
+  type: 'test'
+  ...
+# Subtest: location in use cannot be deactivated
+ok 74 - location in use cannot be deactivated
+  ---
+  duration_ms: 2.298889
+  type: 'test'
+  ...
+# Subtest: search and filters: text, sport, low stock, status; recipients cannot see the stock register
+ok 75 - search and filters: text, sport, low stock, status; recipients cannot see the stock register
+  ---
+  duration_ms: 28.703094
+  type: 'test'
+  ...
+# Subtest: HTTP: ASO creates an item (201); recipients get 403; repeated receipt returns 200 with the same result
+ok 76 - HTTP: ASO creates an item (201); recipients get 403; repeated receipt returns 200 with the same result
+  ---
+  duration_ms: 32.117177
+  type: 'test'
+  ...
+# Subtest: final ledger check: every balance equals the sum of its movements
+ok 77 - final ledger check: every balance equals the sum of its movements
+  ---
+  duration_ms: 1.292489
+  type: 'test'
+  ...
+# Subtest: migrations apply once and are idempotent
+ok 78 - migrations apply once and are idempotent
+  ---
+  duration_ms: 221.932541
+  type: 'test'
+  ...
+# Subtest: an edited, already-applied migration is refused
+ok 79 - an edited, already-applied migration is refused
+  ---
+  duration_ms: 7.840599
+  type: 'test'
+  ...
+# Subtest: audit_log is append-only at the database level
+ok 80 - audit_log is append-only at the database level
+  ---
+  duration_ms: 2.832083
+  type: 'test'
+  ...
+# Subtest: database rejects invalid roles, upper-case emails and incomplete 'complete' profiles
+ok 81 - database rejects invalid roles, upper-case emails and incomplete 'complete' profiles
+  ---
+  duration_ms: 1.784629
+  type: 'test'
+  ...
+# Subtest: email failure after issuing: the issue stands, emails retry with backoff and are delivered later
+ok 82 - email failure after issuing: the issue stands, emails retry with backoff and are delivered later
+  ---
+  duration_ms: 265.163444
+  type: 'test'
+  ...
+# Email 3 to nobody@vitbhopal.ac.in failed permanently: 550 mailbox unavailable
+# Subtest: after 6 failed attempts an email is FAILED, visible to FR Sports, and can be resent
+ok 83 - after 6 failed attempts an email is FAILED, visible to FR Sports, and can be resent
+  ---
+  duration_ms: 55.41203
+  type: 'test'
+  ...
+# Subtest: each email is sent exactly once even with several dispatchers running at the same time
+ok 84 - each email is sent exactly once even with several dispatchers running at the same time
+  ---
+  duration_ms: 35.640221
+  type: 'test'
+  ...
+# Subtest: the same email cannot be queued twice
+ok 85 - the same email cannot be queued twice
+  ---
+  duration_ms: 2.402921
+  type: 'test'
+  ...
+# Subtest: daily ceiling: sending stops at the limit and resumes the next day
+ok 86 - daily ceiling: sending stops at the limit and resumes the next day
+  ---
+  duration_ms: 15.482773
+  type: 'test'
+  ...
+# Subtest: cron dispatch endpoint requires the secret
+ok 87 - cron dispatch endpoint requires the secret
+  ---
+  duration_ms: 3.245522
+  type: 'test'
+  ...
+# Subtest: permission matrix matches the approved blueprint for every role and action
+ok 88 - permission matrix matches the approved blueprint for every role and action
+  ---
+  duration_ms: 1.094806
+  type: 'test'
+  ...
+# Subtest: only FR Sports approves discards and corrections; management can change nothing
+ok 89 - only FR Sports approves discards and corrections; management can change nothing
+  ---
+  duration_ms: 0.135281
+  type: 'test'
+  ...
+# Subtest: navigation follows permissions
+ok 90 - navigation follows permissions
+  ---
+  duration_ms: 0.267457
+  type: 'test'
+  ...
+# Subtest: schedule arithmetic: days 1, 4, 7, 10 with the defaults; never more than the maximum
+ok 91 - schedule arithmetic: days 1, 4, 7, 10 with the defaults; never more than the maximum
+  ---
+  duration_ms: 219.009877
+  type: 'test'
+  ...
+# Subtest: 15 days of daily runs: 4 reminders to the recipient, the last also to the issuing staff, no duplicates
+ok 92 - 15 days of daily runs: 4 reminders to the recipient, the last also to the issuing staff, no duplicates
+  ---
+  duration_ms: 97.274786
+  type: 'test'
+  ...
+# Subtest: a missed day is caught up with the current reminder only; returned equipment gets no more reminders
+ok 93 - a missed day is caught up with the current reminder only; returned equipment gets no more reminders
+  ---
+  duration_ms: 39.769573
+  type: 'test'
+  ...
+# Subtest: FR Sports sets the schedule; others cannot; invalid values refused; 0 turns reminders off
+ok 94 - FR Sports sets the schedule; others cannot; invalid values refused; 0 turns reminders off
+  ---
+  duration_ms: 16.973481
+  type: 'test'
+  ...
+# Subtest: stock register: one row per item, totals equal live balances, accountable = available + issued + damaged + missing
+ok 95 - stock register: one row per item, totals equal live balances, accountable = available + issued + damaged + missing
+  ---
+  duration_ms: 421.957818
+  type: 'test'
+  ...
+# Subtest: issue and return register: who, approved by, handed over by, due, returned, condition; overdue computed
+ok 96 - issue and return register: who, approved by, handed over by, due, returned, condition; overdue computed
+  ---
+  duration_ms: 12.463838
+  type: 'test'
+  ...
+# Subtest: damage, discard, correction, verification and receipt registers show each event with who decided it
+ok 97 - damage, discard, correction, verification and receipt registers show each event with who decided it
+  ---
+  duration_ms: 6.837451
+  type: 'test'
+  ...
+# Subtest: report access follows roles; recipients see none
+ok 98 - report access follows roles; recipients see none
+  ---
+  duration_ms: 1.546671
+  type: 'test'
+  ...
+# Subtest: Excel export: same rows as the page, numbers as numbers, total row, export recorded in the audit log
+ok 99 - Excel export: same rows as the page, numbers as numbers, total row, export recorded in the audit log
+  ---
+  duration_ms: 33.173743
+  type: 'test'
+  ...
+# Subtest: Excel export opens in LibreOffice with totals that add up
+ok 100 - Excel export opens in LibreOffice with totals that add up
+  ---
+  duration_ms: 243.129385
+  type: 'test'
+  ...
+# Subtest: PDF export: valid file, A4 landscape, contains the title, references and totals
+ok 101 - PDF export: valid file, A4 landscape, contains the title, references and totals
+  ---
+  duration_ms: 29.496405
+  type: 'test'
+  ...
+# Subtest: PDF with many rows paginates with the header on every page
+ok 102 - PDF with many rows paginates with the header on every page
+  ---
+  duration_ms: 31.722896
+  type: 'test'
+  ...
+# Subtest: dashboard: totals match the stock register; action list is specific to the role
+ok 103 - dashboard: totals match the stock register; action list is specific to the role
+  ---
+  duration_ms: 29.093414
+  type: 'test'
+  ...
+# Subtest: HTTP: PDF and Excel downloads with the right headers; bad format refused; recipient refused
+ok 104 - HTTP: PDF and Excel downloads with the right headers; bad format refused; recipient refused
+  ---
+  duration_ms: 43.412668
+  type: 'test'
+  ...
+# Subtest: catalog shows only equipment that can be issued now
+ok 105 - catalog shows only equipment that can be issued now
+  ---
+  duration_ms: 316.247184
+  type: 'test'
+  ...
+# Subtest: a multi-item request moves no stock and is visible to staff, not to other recipients
+ok 106 - a multi-item request moves no stock and is visible to staff, not to other recipients
+  ---
+  duration_ms: 29.618041
+  type: 'test'
+  ...
+# Subtest: request validation: availability, dates, duplicates, pending limit, management cannot request
+ok 107 - request validation: availability, dates, duplicates, pending limit, management cannot request
+  ---
+  duration_ms: 46.457757
+  type: 'test'
+  ...
+# Subtest: blueprint example: approve & hand over 10 of 60 -> available 50, issued 10; issue record, movements and emails
+ok 108 - blueprint example: approve & hand over 10 of 60 -> available 50, issued 10; issue record, movements and emails
+  ---
+  duration_ms: 22.945436
+  type: 'test'
+  ...
+# Subtest: approver may issue fewer or drop a line; recipient is told the actual quantities
+ok 109 - approver may issue fewer or drop a line; recipient is told the actual quantities
+  ---
+  duration_ms: 27.236067
+  type: 'test'
+  ...
+# Subtest: nobody approves or rejects their own request
+ok 110 - nobody approves or rejects their own request
+  ---
+  duration_ms: 24.961287
+  type: 'test'
+  ...
+# Subtest: two officers approving the same request at the same moment: exactly one issue
+ok 111 - two officers approving the same request at the same moment: exactly one issue
+  ---
+  duration_ms: 187.494447
+  type: 'test'
+  ...
+# Subtest: two officers issuing the last 5 units to different people at once: one succeeds, stock never negative
+ok 112 - two officers issuing the last 5 units to different people at once: one succeeds, stock never negative
+  ---
+  duration_ms: 18.509883
+  type: 'test'
+  ...
+# Subtest: all-or-nothing: if one line became unavailable while pending, no line is issued
+ok 113 - all-or-nothing: if one line became unavailable while pending, no line is issued
+  ---
+  duration_ms: 23.211527
+  type: 'test'
+  ...
+# Subtest: rejection needs a reason, changes no stock, emails the requester and closes the request
+ok 114 - rejection needs a reason, changes no stock, emails the requester and closes the request
+  ---
+  duration_ms: 14.811412
+  type: 'test'
+  ...
+# Subtest: cancel: own pending requests only
+ok 115 - cancel: own pending requests only
+  ---
+  duration_ms: 16.718237
+  type: 'test'
+  ...
+# Subtest: storekeeper marks a request ready for handover; no stock moves; recipients cannot
+ok 116 - storekeeper marks a request ready for handover; no stock moves; recipients cannot
+  ---
+  duration_ms: 12.223156
+  type: 'test'
+  ...
+# Subtest: due dates: issue due date can be set at handover; overdue appears without any scheduled job
+ok 117 - due dates: issue due date can be set at handover; overdue appears without any scheduled job
+  ---
+  duration_ms: 18.658732
+  type: 'test'
+  ...
+# Subtest: issuing person must be active store staff
+ok 118 - issuing person must be active store staff
+  ---
+  duration_ms: 10.978774
+  type: 'test'
+  ...
+# Subtest: HTTP: storekeeper gets 403 on approve; ASO 201; repeat with the same key returns 200 and issues once
+ok 119 - HTTP: storekeeper gets 403 on approve; ASO 201; repeat with the same key returns 200 and issues once
+  ---
+  duration_ms: 50.739864
+  type: 'test'
+  ...
+# Subtest: ledger is consistent after all issuing
+ok 120 - ledger is consistent after all issuing
+  ---
+  duration_ms: 3.100288
+  type: 'test'
+  ...
+# Subtest: blueprint normal return: 50 available + 10 issued, all 10 back usable -> 60 available, 0 issued; issue and request closed
+ok 121 - blueprint normal return: 50 available + 10 issued, all 10 back usable -> 60 available, 0 issued; issue and request closed
+  ---
+  duration_ms: 394.276862
+  type: 'test'
+  ...
+# Subtest: blueprint damaged return: 8 usable + 2 damaged -> 58 available, 2 damaged; damaged units cannot be requested
+ok 122 - blueprint damaged return: 8 usable + 2 damaged -> 58 available, 2 damaged; damaged units cannot be requested
+  ---
+  duration_ms: 30.860118
+  type: 'test'
+  ...
+# Subtest: missing items: recorded with a note, moved to Missing, incident against the accountable recipient
+ok 123 - missing items: recorded with a note, moved to Missing, incident against the accountable recipient
+  ---
+  duration_ms: 42.971764
+  type: 'test'
+  ...
+# Subtest: full returns only: wrong totals, a missing line, extra lines or partial returns record nothing
+ok 124 - full returns only: wrong totals, a missing line, extra lines or partial returns record nothing
+  ---
+  duration_ms: 39.420799
+  type: 'test'
+  ...
+# Subtest: duplicate returns are impossible, sequentially and when 5 staff confirm at the same moment
+ok 125 - duplicate returns are impossible, sequentially and when 5 staff confirm at the same moment
+  ---
+  duration_ms: 26.485131
+  type: 'test'
+  ...
+# Subtest: consumables: used-up units need a note, go to Missing as a CONSUMED incident, and cannot be 'recovered'
+ok 126 - consumables: used-up units need a note, go to Missing as a CONSUMED incident, and cannot be 'recovered'
+  ---
+  duration_ms: 33.980715
+  type: 'test'
+  ...
+# Subtest: mark damaged usable: FR Sports / ASO only, never more than is open; closes the incident
+ok 127 - mark damaged usable: FR Sports / ASO only, never more than is open; closes the incident
+  ---
+  duration_ms: 38.645672
+  type: 'test'
+  ...
+# Subtest: missing equipment recovered: usable -> Available; damaged -> Damaged with a new damage incident
+ok 128 - missing equipment recovered: usable -> Available; damaged -> Damaged with a new damage incident
+  ---
+  duration_ms: 32.246682
+  type: 'test'
+  ...
+# Subtest: damage found in the store: Available -> Damaged; only units actually in the store
+ok 129 - damage found in the store: Available -> Damaged; only units actually in the store
+  ---
+  duration_ms: 6.898295
+  type: 'test'
+  ...
+# Subtest: photos: JPEG accepted by file signature, others refused; attached to damage; visible to staff, not recipients
+ok 130 - photos: JPEG accepted by file signature, others refused; attached to damage; visible to staff, not recipients
+  ---
+  duration_ms: 54.707271
+  type: 'test'
+  ...
+# Subtest: email failure after a return: the return stands and the email is retried
+ok 131 - email failure after a return: the return stands and the email is retried
+  ---
+  duration_ms: 38.850532
+  type: 'test'
+  ...
+# Subtest: HTTP: recipient gets 403; storekeeper 201; repeating with the same key returns 200 and records once
+ok 132 - HTTP: recipient gets 403; storekeeper 201; repeating with the same key returns 200 and records once
+  ---
+  duration_ms: 54.230919
+  type: 'test'
+  ...
+# Subtest: daily job runs reminders, housekeeping and the ledger check, and requires the secret
+ok 133 - daily job runs reminders, housekeeping and the ledger check, and requires the secret
+  ---
+  duration_ms: 10.778643
+  type: 'test'
+  ...
+# Subtest: books balance: ledger matches; open damage incidents = Damaged stock; open missing + used-up = Missing stock
+ok 134 - books balance: ledger matches; open damage incidents = Damaged stock; open missing + used-up = Missing stock
+  ---
+  duration_ms: 2.272689
+  type: 'test'
+  ...
+1..134
+# tests 134
+# suites 0
+# pass 134
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 57713.847455

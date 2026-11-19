@@ -1,0 +1,43 @@
+{
+  "name": "sports-eqp-issue",
+  "version": "1.0.0-rc.1",
+  "private": true,
+  "description": "Sports Inventory Management Portal for the Sports Department, VIT Bhopal University",
+  "type": "module",
+  "engines": {
+    "node": ">=20.9"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "typecheck:core": "tsc --noEmit -p tsconfig.core.json",
+    "test": "node --import tsx --test --test-concurrency=1 tests/*.test.ts",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "admin:create": "tsx scripts/create-admin.ts",
+    "maintenance:purge": "tsx scripts/purge.ts",
+    "preflight": "tsx scripts/preflight.ts",
+    "check:pages": "node tools/preview/build.mjs && node tools/preview/.out/preview.mjs preview-out && python3 tools/preview/a11y_check.py preview-out",
+    "typecheck:pages": "tsc -p tools/preview/tsconfig.json"
+  },
+  "dependencies": {
+    "jszip": "^3.10.1",
+    "next": "^16.0.0",
+    "nodemailer": "^7.0.0",
+    "pg": "^8.13.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "server-only": "^0.0.1",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/nodemailer": "^6.4.0",
+    "@types/pg": "^8.11.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}
